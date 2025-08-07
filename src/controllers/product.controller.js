@@ -9,7 +9,7 @@ const storeProduct = async (req , res)=>{
       }
        
 
-      const localprofilepath = req.file.path
+      const localprofilepath = req.file?.path
       console.log("Uploaded file:", req.file);
     
 if (!localprofilepath) {
@@ -39,4 +39,25 @@ if (!image || !image.url) {
       
 }
 
-export{storeProduct}
+const getproduct = async(req , res)=>{
+      
+  const products = await Product.find()
+    console.log(products);
+    
+  res.status(200).json({data:products})
+}
+
+
+const getoneproduct = async(req , res)=>{
+  try {
+     const {id} = req.params
+    const product = await Product.findById(id)
+    console.log(product);
+    
+    res.status(200).json({data:product})
+  } catch (error) {
+    console.log("error in getting id " , error)
+  }
+}
+
+export{storeProduct ,getproduct , getoneproduct}
