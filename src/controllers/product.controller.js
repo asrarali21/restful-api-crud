@@ -1,6 +1,6 @@
 import { uploadoncloudinary } from "../../cloudinary.js"
 import { Product } from "../models/product.models.js"
-
+//push 
 const storeProduct = async (req , res)=>{
       const {name , price , description , title} = req.body
 
