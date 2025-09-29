@@ -7,8 +7,7 @@ const storeProduct = async (req , res)=>{
       if ([name , price , description , title].some((item)=> item.trim() === "")) {
         throw new error("field is required")
       }
-       
-//push 
+
       const localprofilepath = req.file?.path
       console.log("Uploaded file:", req.file);
     
