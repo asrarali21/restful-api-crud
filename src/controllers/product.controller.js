@@ -8,7 +8,7 @@ const storeProduct = async (req , res)=>{
         throw new error("field is required")
       }
        
-
+//push 
       const localprofilepath = req.file?.path
       console.log("Uploaded file:", req.file);
     
